@@ -42,7 +42,7 @@ module.exports.destroy = async(req,res)=>{
    
 }
 module.exports.displayAll = async(req,res)=>{
-    const questions = await Question.findMany()
+    const questions = await Question.find()
     .sort('-createdAt')
     .populate({
         path:'options',
