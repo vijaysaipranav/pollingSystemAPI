@@ -41,4 +41,15 @@ module.exports.destroy = async(req,res)=>{
     }
    
 }
+module.exports.displayAll = async(req,res)=>{
+    const questions = await Question.findMany()
+    .sort('-createdAt')
+    .populate({
+        path:'options',
+        select:['text','votes','link_to_vote'],
+    })
+    res.status(200).json({
+        Questions:questions,
+    })
+}
 
