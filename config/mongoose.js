@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 // establishing a connection with mongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/polling_api_db',{useNewUrlParser:true,useUnifiedTopology:true});
+mongoose.connect(process.env.MONGODBURL);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console,'Error connecting to db'));
