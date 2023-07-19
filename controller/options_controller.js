@@ -16,6 +16,7 @@ module.exports.create = async(req,res)=>{
        
         if (option){
             question.options.push(option);
+            
             option.link_to_vote = `http://localhost:8000/options/${option.id}/add_vote`;
             option.save();
             question.save();

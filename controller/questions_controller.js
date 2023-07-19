@@ -29,6 +29,7 @@ module.exports.destroy = async(req,res)=>{
     try{
         const question = await Question.findById(req.params.id);
         await Question.deleteOne();
+       
         await Option.deleteMany({question:req.params.id});
         res.status(201).json({
             message:"success",
