@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// schema for options
 const optionSchema = new mongoose.Schema({
     text:{
         type:String,

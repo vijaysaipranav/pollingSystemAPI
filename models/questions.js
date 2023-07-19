@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// schema for questions
 const questionSchema = new mongoose.Schema({
     tittle:{
         type:String,

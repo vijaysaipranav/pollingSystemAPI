@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// establishing a connection with mongoDB
 mongoose.connect('mongodb://127.0.0.1:27017/polling_api_db',{useNewUrlParser:true,useUnifiedTopology:true});
 
 const db = mongoose.connection;

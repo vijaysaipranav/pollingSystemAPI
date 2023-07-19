@@ -3,7 +3,7 @@ const Option = require('../models/options');
 const Question = require('../models/questions');
 
 
-
+// this function is used to create a new option to question
 module.exports.create = async(req,res)=>{
     try{
         const question = await Question.findById(req.params.id);
@@ -27,6 +27,7 @@ module.exports.create = async(req,res)=>{
         res.status(400).json({"error":err.message});
     }
 }
+// this function is used to add vote
 module.exports.addVote = async(req,res)=>{
    try{
     const option = await Option.findById(req.params.id);
@@ -39,6 +40,7 @@ module.exports.addVote = async(req,res)=>{
     res.status(400).json({"error":err.message});
    }
 }
+// this function is used to destroy a option
 module.exports.destroy = async(req,res)=>{
     try{
         const option = await Option.findById(req.params.id);

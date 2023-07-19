@@ -1,7 +1,7 @@
 const Question = require('../models/questions');
 const Option = require('../models/options');
 
-
+// this function is used to create a new Question
 module.exports.create = async(req,res)=>{
     try{
         await Question.create({
@@ -14,6 +14,7 @@ module.exports.create = async(req,res)=>{
         res.status(400).json({"error":err.message});
     }
 }
+// this function is used to display a Question
 module.exports.display = async(req,res)=>{
     const questions = await Question.findById(req.params.id)
     .sort('-createdAt')
@@ -25,6 +26,7 @@ module.exports.display = async(req,res)=>{
         Questions:questions,
     })
 }
+// this function is used to destroy Question
 module.exports.destroy = async(req,res)=>{
     try{
         const question = await Question.findById(req.params.id);
