@@ -55,7 +55,15 @@ In server.js use your own mongoDB username and Password from connection string o
 ```
 npm start
 ```
-5. Open your web browser and visit [http://localhost:8000/questions](url) to access the pollingSystemAPI
+5. Open your web browser and visit [https://pollingsystem-qdyc.onrender.com](url) to access the pollingSystemAPI
+6. you can use these following routes (to test the api you can use postman website):-
+   I) /questions/create - to create question
+   II) /questions/question_id/options/create - to create option
+   III) /questions/question_id/delete - to delete the question
+   IV) /options/options_id/delete - to delete the option
+   V) /options/options_id/add_vote - to add vote to a option
+   VI) /questions/question_id - to display the qusetion and its options
+   VII) / - to display all the questions and options and votes
 
 # Contributing:
 Contributions are most easily and thankfully welcome! If you'd like to contribute to this project, please follow these steps:
